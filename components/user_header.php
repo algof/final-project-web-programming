@@ -103,7 +103,9 @@ if(isset($message)){
    <nav class="navbar">
       <a href="home.php"><i class="fas fa-home"></i><span>Laman utama</span></a>
       <a href="about.php"><i class="fas fa-question"></i><span>Tentang kami</span></a>
-      <a href="courses.php"><i class="fas fa-graduation-cap"></i><span>Kelas</span></a>
+      <?php if(!empty($user_id)) { ?>
+         <a href="courses.php"><i class="fas fa-graduation-cap"></i><span>Kelas</span></a>
+      <?php } ?>
       <a href="teachers.php"><i class="fas fa-chalkboard-user"></i><span>Pengajar</span></a>
       <a href="contact.php"><i class="fas fa-headset"></i><span>Hubungi kami</span></a>
    </nav>
