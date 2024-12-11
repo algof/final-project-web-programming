@@ -64,7 +64,7 @@ if(isset($_POST['tutor_fetch'])){
 
 <section class="tutor-profile">
 
-   <h1 class="heading">profile details</h1>
+   <h1 class="heading">Detail Profil</h1>
 
    <div class="details">
       <div class="tutor">
@@ -73,10 +73,10 @@ if(isset($_POST['tutor_fetch'])){
          <span><?= $fetch_tutor['profession']; ?></span>
       </div>
       <div class="flex">
-         <p>total playlists : <span><?= $total_playlists; ?></span></p>
-         <p>total videos : <span><?= $total_contents; ?></span></p>
+         <p>total playlist : <span><?= $total_playlists; ?></span></p>
+         <p>total video : <span><?= $total_contents; ?></span></p>
          <p>total likes : <span><?= $total_likes; ?></span></p>
-         <p>total comments : <span><?= $total_comments; ?></span></p>
+         <p>total komentar : <span><?= $total_comments; ?></span></p>
       </div>
    </div>
 
@@ -86,7 +86,7 @@ if(isset($_POST['tutor_fetch'])){
 
 <section class="courses">
 
-   <h1 class="heading">latest course</h1>
+   <h1 class="heading">Kelas</h1>
 
    <div class="box-container">
 

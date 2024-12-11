@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
    $select_contact->execute([$name, $email, $number, $msg]);
 
    if($select_contact->rowCount() > 0){
-      $message[] = 'message sent already!';
+      $message[] = 'message sudah dikirimkan!';
    }else{
       $insert_message = $conn->prepare("INSERT INTO `contact`(name, email, number, message) VALUES(?,?,?,?)");
       $insert_message->execute([$name, $email, $number, $msg]);
@@ -87,12 +87,12 @@ if(isset($_POST['submit'])){
          <i class="fas fa-envelope"></i>
          <h3>Email Address</h3>
          <a href="mailto:algofkz@gmail.com">algofkz@gmail.com</a>
-         <a href="mailto:">arvin@gmail.com</a>
+         <a href="mailto:">valensioarvin@gmail.com</a>
       </div>
 
       <div class="box">
          <i class="fas fa-map-marker-alt"></i>
-         <h3>Kantor kami</h3>
+         <h3>Our Place</h3>
          <a href="https://maps.app.goo.gl/2FEwxwUad5phwVth7">Apartment Educity Lt. 15 No. 5029</a>
       </div>
 

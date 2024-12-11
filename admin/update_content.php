@@ -49,7 +49,7 @@ if(isset($_POST['update'])){
 
    if(!empty($thumb)){
       if($thumb_size > 2000000){
-         $message[] = 'image size is too large!';
+         $message[] = 'ukuran gambar terlalu besar!';
       }else{
          $update_thumb = $conn->prepare("UPDATE `content` SET thumb = ? WHERE id = ?");
          $update_thumb->execute([$rename_thumb, $video_id]);
@@ -78,7 +78,7 @@ if(isset($_POST['update'])){
       }
    }
 
-   $message[] = 'content updated!';
+   $message[] = 'video diperbarui!';
 
 }
 
@@ -131,7 +131,7 @@ if(isset($_POST['delete_video'])){
    
 <section class="video-form">
 
-   <h1 class="heading">update content</h1>
+   <h1 class="heading">update video</h1>
 
    <?php
       $select_videos = $conn->prepare("SELECT * FROM `content` WHERE id = ? AND tutor_id = ?");
@@ -150,13 +150,13 @@ if(isset($_POST['delete_video'])){
          <option value="active">active</option>
          <option value="deactive">deactive</option>
       </select>
-      <p>update title <span>*</span></p>
-      <input type="text" name="title" maxlength="100" required placeholder="enter video title" class="box" value="<?= $fecth_videos['title']; ?>">
-      <p>update description <span>*</span></p>
-      <textarea name="description" class="box" required placeholder="write description" maxlength="1000" cols="30" rows="10"><?= $fecth_videos['description']; ?></textarea>
+      <p>update judul <span>*</span></p>
+      <input type="text" name="title" maxlength="100" required placeholder="masukkan judul video" class="box" value="<?= $fecth_videos['title']; ?>">
+      <p>update deskripsi <span>*</span></p>
+      <textarea name="description" class="box" required placeholder="masukkan deskripsi" maxlength="1000" cols="30" rows="10"><?= $fecth_videos['description']; ?></textarea>
       <p>update playlist</p>
       <select name="playlist" class="box">
-         <option value="<?= $fecth_videos['playlist_id']; ?>" selected>--select playlist</option>
+         <option value="<?= $fecth_videos['playlist_id']; ?>" selected>--pilih playlist</option>
          <?php
          $select_playlists = $conn->prepare("SELECT * FROM `playlist` WHERE tutor_id = ?");
          $select_playlists->execute([$tutor_id]);
@@ -169,7 +169,7 @@ if(isset($_POST['delete_video'])){
          ?>
          <?php
          }else{
-            echo '<option value="" disabled>no playlist created yet!</option>';
+            echo '<option value="" disabled>belum ada playlist yang dibuat!</option>';
          }
          ?>
       </select>
@@ -181,14 +181,14 @@ if(isset($_POST['delete_video'])){
       <input type="file" name="video" accept="video/*" class="box">
       <input type="submit" value="update content" name="update" class="btn">
       <div class="flex-btn">
-         <a href="view_content.php?get_id=<?= $video_id; ?>" class="option-btn">view content</a>
-         <input type="submit" value="delete content" name="delete_video" class="delete-btn">
+         <a href="view_content.php?get_id=<?= $video_id; ?>" class="option-btn">lihat video</a>
+         <input type="submit" value="delete content" name="delete video" class="delete-btn">
       </div>
    </form>
    <?php
          }
       }else{
-         echo '<p class="empty">video not found! <a href="add_content.php" class="btn" style="margin-top: 1.5rem;">add videos</a></p>';
+         echo '<p class="empty">video tidak ditemukan! <a href="add_content.php" class="btn" style="margin-top: 1.5rem;">tambah video</a></p>';
       }
    ?>
 

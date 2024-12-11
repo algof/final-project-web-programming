@@ -33,20 +33,20 @@ if(isset($_COOKIE['user_id'])){
 
 <section class="teachers">
 
-   <h1 class="heading">expert tutors</h1>
+   <h1 class="heading">Pengajar</h1>
 
    <form action="search_tutor.php" method="post" class="search-tutor">
-      <input type="text" name="search_tutor" maxlength="100" placeholder="search tutor..." required>
+      <input type="text" name="search_tutor" maxlength="100" placeholder="Cari Pengajar" required>
       <button type="submit" name="search_tutor_btn" class="fas fa-search"></button>
    </form>
 
    <div class="box-container">
 
-      <div class="box offer">
+      <!-- <div class="box offer">
          <h3>become a tutor</h3>
          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum, magnam!</p>
          <a href="admin/register.php" class="inline-btn">get started</a>
-      </div>
+      </div> -->
 
       <?php
          $select_tutors = $conn->prepare("SELECT * FROM `tutors`");
@@ -80,19 +80,19 @@ if(isset($_COOKIE['user_id'])){
                <span><?= $fetch_tutor['profession']; ?></span>
             </div>
          </div>
-         <p>playlists : <span><?= $total_playlists; ?></span></p>
-         <p>total videos : <span><?= $total_contents ?></span></p>
+         <p>playlist : <span><?= $total_playlists; ?></span></p>
+         <p>total video : <span><?= $total_contents ?></span></p>
          <p>total likes : <span><?= $total_likes ?></span></p>
-         <p>total comments : <span><?= $total_comments ?></span></p>
+         <p>total komentar : <span><?= $total_comments ?></span></p>
          <form action="tutor_profile.php" method="post">
             <input type="hidden" name="tutor_email" value="<?= $fetch_tutor['email']; ?>">
-            <input type="submit" value="view profile" name="tutor_fetch" class="inline-btn">
+            <input type="submit" value="Lihat Profil" name="tutor_fetch" class="inline-btn">
          </form>
       </div>
       <?php
             }
          }else{
-            echo '<p class="empty">no tutors found!</p>';
+            echo '<p class="empty">Pengajar tidak ditemukan!</p>';
          }
       ?>
 

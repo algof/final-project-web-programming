@@ -53,9 +53,9 @@ if(isset($_POST['delete_comment'])){
    if($verify_comment->rowCount() > 0){
       $delete_comment = $conn->prepare("DELETE FROM `comments` WHERE id = ?");
       $delete_comment->execute([$delete_id]);
-      $message[] = 'comment deleted successfully!';
+      $message[] = 'komentar berhasil dihapus!';
    }else{
-      $message[] = 'comment already deleted!';
+      $message[] = 'komentar sudah dihapus!';
    }
 
 }
@@ -112,14 +112,14 @@ if(isset($_POST['delete_comment'])){
          <div class="flex-btn">
             <input type="hidden" name="video_id" value="<?= $video_id; ?>">
             <a href="update_content.php?get_id=<?= $video_id; ?>" class="option-btn">update</a>
-            <input type="submit" value="delete" class="delete-btn" onclick="return confirm('delete this video?');" name="delete_video">
+            <input type="submit" value="delete" class="delete-btn" onclick="return confirm('hapus video ini?');" name="delete video">
          </div>
       </form>
    </div>
    <?php
     }
    }else{
-      echo '<p class="empty">no contents added yet! <a href="add_content.php" class="btn" style="margin-top: 1.5rem;">add videos</a></p>';
+      echo '<p class="empty">belum ada video! <a href="add_content.php" class="btn" style="margin-top: 1.5rem;">tambah video</a></p>';
    }
       
    ?>
@@ -152,13 +152,13 @@ if(isset($_POST['delete_comment'])){
          <p class="text"><?= $fetch_comment['comment']; ?></p>
          <form action="" method="post" class="flex-btn">
             <input type="hidden" name="comment_id" value="<?= $fetch_comment['id']; ?>">
-            <button type="submit" name="delete_comment" class="inline-delete-btn" onclick="return confirm('delete this comment?');">delete comment</button>
+            <button type="submit" name="delete_comment" class="inline-delete-btn" onclick="return confirm('hapus komentar ini?');">hapus komentar</button>
          </form>
       </div>
       <?php
        }
       }else{
-         echo '<p class="empty">no comments added yet!</p>';
+         echo '<p class="empty">belum ada komentar!</p>';
       }
       ?>
       </div>

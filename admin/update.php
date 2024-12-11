@@ -28,24 +28,24 @@ if(isset($_POST['submit'])){
    if(!empty($name)){
       $update_name = $conn->prepare("UPDATE `tutors` SET name = ? WHERE id = ?");
       $update_name->execute([$name, $tutor_id]);
-      $message[] = 'username updated successfully!';
+      $message[] = 'username berhasil diupdate!';
    }
 
    if(!empty($profession)){
       $update_profession = $conn->prepare("UPDATE `tutors` SET profession = ? WHERE id = ?");
       $update_profession->execute([$profession, $tutor_id]);
-      $message[] = 'profession updated successfully!';
+      $message[] = 'profession berhasil diupdate!';
    }
 
    if(!empty($email)){
       $select_email = $conn->prepare("SELECT email FROM `tutors` WHERE id = ? AND email = ?");
       $select_email->execute([$tutor_id, $email]);
       if($select_email->rowCount() > 0){
-         $message[] = 'email already taken!';
+         $message[] = 'email sudah digunakan!';
       }else{
          $update_email = $conn->prepare("UPDATE `tutors` SET email = ? WHERE id = ?");
          $update_email->execute([$email, $tutor_id]);
-         $message[] = 'email updated successfully!';
+         $message[] = 'email berhasil diupdate!';
       }
    }
 
@@ -59,7 +59,7 @@ if(isset($_POST['submit'])){
 
    if(!empty($image)){
       if($image_size > 2000000){
-         $message[] = 'image size too large!';
+         $message[] = 'ukuran gambar terlalu besar!';
       }else{
          $update_image = $conn->prepare("UPDATE `tutors` SET `image` = ? WHERE id = ?");
          $update_image->execute([$rename, $tutor_id]);
@@ -67,7 +67,7 @@ if(isset($_POST['submit'])){
          if($prev_image != '' AND $prev_image != $rename){
             unlink('../uploaded_files/'.$prev_image);
          }
-         $message[] = 'image updated successfully!';
+         $message[] = 'gambar berhasil diperbarui!';
       }
    }
 
@@ -81,16 +81,16 @@ if(isset($_POST['submit'])){
 
    if($old_pass != $empty_pass){
       if($old_pass != $prev_pass){
-         $message[] = 'old password not matched!';
+         $message[] = 'password lama tidak sesuai!';
       }elseif($new_pass != $cpass){
-         $message[] = 'confirm password not matched!';
+         $message[] = 'password tidak sesuai!';
       }else{
          if($new_pass != $empty_pass){
             $update_pass = $conn->prepare("UPDATE `tutors` SET password = ? WHERE id = ?");
             $update_pass->execute([$cpass, $tutor_id]);
-            $message[] = 'password updated successfully!';
+            $message[] = 'password berhasil diperbarui!';
          }else{
-            $message[] = 'please enter a new password!';
+            $message[] = 'masukkan password baru!';
          }
       }
    }

@@ -80,16 +80,16 @@
 <body>
 
    <div class="login-container">
-      <h2>Welcome! Please choose your role to log in:</h2>
+      <h2>Selamat Datang! Silakan pilih role di bawah:</h2>
 
       <div class="login-options">
          <a href="login.php" class="login-button student-btn">
             <i class="fas fa-user-graduate"></i>
-            <span>Login as Student</span>
+            <span>Login sebagai Pelajar</span>
          </a>
          <a href="admin/login.php" class="login-button tutor-btn">
             <i class="fas fa-chalkboard-teacher"></i>
-            <span>Login as Tutor</span>
+            <span>Login sebagai Pengajar</span>
          </a>
       </div>
    </div>

@@ -52,7 +52,7 @@ $total_bookmarked = $select_bookmark->rowCount();
          <img src="uploaded_files/<?= $fetch_profile['image']; ?>" alt="">
          <h3><?= $fetch_profile['name']; ?></h3>
          <p>student</p>
-         <a href="update.php" class="inline-btn">update profile</a>
+         <a href="update.php" class="inline-btn">update profil</a>
       </div>
 
       <div class="box-container">
@@ -65,7 +65,7 @@ $total_bookmarked = $select_bookmark->rowCount();
                   <span>saved playlists</span>
                </div>
             </div>
-            <a href="#" class="inline-btn">view playlists</a>
+            <a href="#" class="inline-btn">Lihat Playlist</a>
          </div>
 
          <div class="box">
@@ -76,7 +76,7 @@ $total_bookmarked = $select_bookmark->rowCount();
                   <span>liked tutorials</span>
                </div>
             </div>
-            <a href="#" class="inline-btn">view liked</a>
+            <a href="#" class="inline-btn">Lihat like</a>
          </div>
 
          <div class="box">
@@ -87,7 +87,7 @@ $total_bookmarked = $select_bookmark->rowCount();
                   <span>video comments</span>
                </div>
             </div>
-            <a href="#" class="inline-btn">view comments</a>
+            <a href="#" class="inline-btn">Lihat Komentar</a>
          </div>
 
       </div>
@@ -113,7 +113,7 @@ $total_bookmarked = $select_bookmark->rowCount();
 
 <footer class="footer">
 
-   &copy; copyright @ 2022 by <span>mr. web designer</span> | all rights reserved!
+   &copy; Kuliah Pemrograman Web Jurusan Teknik Informatika ITS (2024). Dosen: Imam Kuswardayan, S.Kom, M.T.
 
 </footer>
 

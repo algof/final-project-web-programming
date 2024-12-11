@@ -28,15 +28,15 @@ if(isset($_POST['submit'])){
    $select_tutor->execute([$email]);
    
    if($select_tutor->rowCount() > 0){
-      $message[] = 'email already taken!';
+      $message[] = 'email sudah dipakai!';
    }else{
       if($pass != $cpass){
-         $message[] = 'confirm passowrd not matched!';
+         $message[] = 'password yang anda masukkan salah!';
       }else{
          $insert_tutor = $conn->prepare("INSERT INTO `tutors`(id, name, profession, email, password, image) VALUES(?,?,?,?,?,?)");
          $insert_tutor->execute([$id, $name, $profession, $email, $cpass, $rename]);
          move_uploaded_file($image_tmp_name, $image_folder);
-         $message[] = 'new tutor registered! please login now';
+         $message[] = 'kamu telah terdaftar! silahkan login terlebih dahulu';
       }
    }
 
@@ -79,14 +79,14 @@ if(isset($message)){
 <section class="form-container">
 
    <form class="register" action="" method="post" enctype="multipart/form-data">
-      <h3>register new</h3>
+      <h3>Buat Akun</h3>
       <div class="flex">
          <div class="col">
-            <p>your name <span>*</span></p>
-            <input type="text" name="name" placeholder="eneter your name" maxlength="50" required class="box">
-            <p>your profession <span>*</span></p>
+            <p>Nama <span>*</span></p>
+            <input type="text" name="name" placeholder="masukkan nama" maxlength="50" required class="box">
+            <p>Profesi <span>*</span></p>
             <select name="profession" class="box" required>
-               <option value="" disabled selected>-- select your profession</option>
+               <option value="" disabled selected>-- pilih profesi kamu</option>
                <option value="developer">developer</option>
                <option value="desginer">desginer</option>
                <option value="musician">musician</option>
@@ -99,20 +99,20 @@ if(isset($message)){
                <option value="journalist">journalist</option>
                <option value="photographer">photographer</option>
             </select>
-            <p>your email <span>*</span></p>
-            <input type="email" name="email" placeholder="enter your email" maxlength="20" required class="box">
+            <p>Email <span>*</span></p>
+            <input type="email" name="email" placeholder="masukkan email" maxlength="20" required class="box">
          </div>
          <div class="col">
-            <p>your password <span>*</span></p>
-            <input type="password" name="pass" placeholder="enter your password" maxlength="20" required class="box">
-            <p>confirm password <span>*</span></p>
-            <input type="password" name="cpass" placeholder="confirm your password" maxlength="20" required class="box">
-            <p>select pic <span>*</span></p>
+            <p>Password <span>*</span></p>
+            <input type="password" name="pass" placeholder="masukkan password" maxlength="20" required class="box">
+            <p>Konfirmasi password <span>*</span></p>
+            <input type="password" name="cpass" placeholder="konfirmasi passwordmu" maxlength="20" required class="box">
+            <p>Foto profil <span>*</span></p>
             <input type="file" name="image" accept="image/*" required class="box">
          </div>
       </div>
-      <p class="link">already have an account? <a href="login.php">login now</a></p>
-      <input type="submit" name="submit" value="register now" class="btn">
+      <p class="link">sudah punya akun? <a href="login.php">login sekarang</a></p>
+      <input type="submit" name="submit" value="daftar sekarang" class="btn">
    </form>
 
 </section>
