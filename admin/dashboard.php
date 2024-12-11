@@ -60,26 +60,26 @@ $total_comments = $select_comments->rowCount();
 
       <div class="box">
          <h3><?= $total_contents; ?></h3>
-         <p>total contents</p>
-         <a href="add_content.php" class="btn">add new content</a>
+         <p>total video</p>
+         <a href="add_content.php" class="btn">tambah video baru</a>
       </div>
 
       <div class="box">
          <h3><?= $total_playlists; ?></h3>
          <p>total playlists</p>
-         <a href="add_playlist.php" class="btn">add new playlist</a>
+         <a href="add_playlist.php" class="btn">tambah playlist baru</a>
       </div>
 
       <div class="box">
          <h3><?= $total_likes; ?></h3>
          <p>total likes</p>
-         <a href="contents.php" class="btn">view contents</a>
+         <a href="contents.php" class="btn">lihat video</a>
       </div>
 
       <div class="box">
          <h3><?= $total_comments; ?></h3>
-         <p>total comments</p>
-         <a href="comments.php" class="btn">view comments</a>
+         <p>total komentar</p>
+         <a href="comments.php" class="btn">lihat komentar</a>
       </div>
 
       <!-- <div class="box">

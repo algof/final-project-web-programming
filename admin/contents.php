@@ -29,9 +29,9 @@ if(isset($_POST['delete_video'])){
       $delete_comments->execute([$delete_id]);
       $delete_content = $conn->prepare("DELETE FROM `content` WHERE id = ?");
       $delete_content->execute([$delete_id]);
-      $message[] = 'video deleted!';
+      $message[] = 'video dihapus!';
    }else{
-      $message[] = 'video already deleted!';
+      $message[] = 'video sudah dihapus!';
    }
 
 }
@@ -59,14 +59,21 @@ if(isset($_POST['delete_video'])){
    
 <section class="contents">
 
-   <h1 class="heading">your contents</h1>
+   <div class="heading" style="display: flex; flex-direction:row;">
+      <h1 style="align-items: center; padding-top: 15px; font-size: 2.5rem;">video anda</h1>
+      <div class="box" style="text-align: center; margin-left: 20px; align-items:first baseline;">
+         <a href="add_content.php" class="btn">tambah video</a>
+      </div>
+   </div>
+
+   <!-- <h1 class="heading">video anda</h1> -->
 
    <div class="box-container">
 
-   <div class="box" style="text-align: center;">
-      <h3 class="title" style="margin-bottom: .5rem;">create new content</h3>
-      <a href="add_content.php" class="btn">add content</a>
-   </div>
+   <!-- <div class="box" style="text-align: center;">
+      <h3 class="title" style="margin-bottom: .5rem;">Buat Video Baru</h3>
+      <a href="add_content.php" class="btn">tambah video</a>
+   </div> -->
 
    <?php
       $select_videos = $conn->prepare("SELECT * FROM `content` WHERE tutor_id = ? ORDER BY date DESC");
@@ -85,34 +92,20 @@ if(isset($_POST['delete_video'])){
          <form action="" method="post" class="flex-btn">
             <input type="hidden" name="video_id" value="<?= $video_id; ?>">
             <a href="update_content.php?get_id=<?= $video_id; ?>" class="option-btn">update</a>
-            <input type="submit" value="delete" class="delete-btn" onclick="return confirm('delete this video?');" name="delete_video">
+            <input type="submit" value="delete" class="delete-btn" onclick="return confirm('hapus video ini?');" name="delete_video">
          </form>
-         <a href="view_content.php?get_id=<?= $video_id; ?>" class="btn">view content</a>
+         <a href="view_content.php?get_id=<?= $video_id; ?>" class="btn">lihat video</a>
       </div>
    <?php
          }
       }else{
-         echo '<p class="empty">no contents added yet!</p>';
+         echo '<p class="empty">belum ada video yang ditambahkan!</p>';
       }
    ?>
 
    </div>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php include '../components/footer.php'; ?>
 

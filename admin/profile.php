@@ -48,54 +48,40 @@
    
 <section class="tutor-profile" style="min-height: calc(100vh - 19rem);"> 
 
-   <h1 class="heading">profile details</h1>
+   <h1 class="heading">Profil Saya</h1>
 
    <div class="details">
       <div class="tutor">
          <img src="../uploaded_files/<?= $fetch_profile['image']; ?>" alt="">
          <h3><?= $fetch_profile['name']; ?></h3>
          <span><?= $fetch_profile['profession']; ?></span>
-         <a href="update.php" class="inline-btn">update profile</a>
+         <a href="update.php" class="inline-btn">update profil</a>
       </div>
       <div class="flex">
          <div class="box">
             <span><?= $total_playlists; ?></span>
-            <p>total playlists</p>
-            <a href="playlists.php" class="btn">view playlists</a>
+            <p>total playlist</p>
+            <a href="playlists.php" class="btn">lihat playlist</a>
          </div>
          <div class="box">
             <span><?= $total_contents; ?></span>
-            <p>total videos</p>
-            <a href="contents.php" class="btn">view contents</a>
+            <p>total video</p>
+            <a href="contents.php" class="btn">lihat video</a>
          </div>
          <div class="box">
             <span><?= $total_likes; ?></span>
-            <p>total likes</p>
-            <a href="contents.php" class="btn">view contents</a>
+            <p>total disukai</p>
+            <a href="contents.php" class="btn">lihat video</a>
          </div>
          <div class="box">
             <span><?= $total_comments; ?></span>
-            <p>total comments</p>
-            <a href="comments.php" class="btn">view comments</a>
+            <p>total komentar</p>
+            <a href="comments.php" class="btn">lihat komentar</a>
          </div>
       </div>
    </div>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php include '../components/footer.php'; ?>
 
