@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
      setcookie('tutor_id', $row['id'], time() + 60*60*24*30, '/');
      header('location:dashboard.php');
    }else{
-      $message[] = 'incorrect email or password!';
+      $message[] = 'email atau password salah!';
    }
 
 }
@@ -61,9 +61,9 @@ if(isset($message)){
    <form action="" method="post" enctype="multipart/form-data" class="login">
       <h3>selamat datang tutor!</h3>
       <p>Email Anda <span>*</span></p>
-      <input type="email" name="email" placeholder="Masukkan Email Anda" maxlength="20" required class="box">
+      <input type="email" name="email" placeholder="masukkan email anda" maxlength="20" required class="box">
       <p>Password Anda <span>*</span></p>
-      <input type="password" name="pass" placeholder="enter your password" maxlength="20" required class="box">
+      <input type="password" name="pass" placeholder="masukkan password" maxlength="20" required class="box">
       <p class="link">belum punya akun? <a href="register.php">daftar sebagai tutor</a></p>
       <input type="submit" name="submit" value="login now" class="btn">
    </form>

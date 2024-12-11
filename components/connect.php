@@ -1,8 +1,10 @@
 <?php
-
-   $db_name = 'mysql:host=localhost;dbname=course_db';
-   $user_name = 'root';
-   $user_password = '';
+   // connect asli
+   // $db_name = 'mysql:host=localhost;dbname=course_db';
+   // connect hosting
+   $db_name = 'mysql:host=sql312.infinityfree.com;dbname=if0_37898271_course_db';
+   $user_name = 'if0_37898271';
+   $user_password = 'r3koJF3Y7xS9fM';
 
    $conn = new PDO($db_name, $user_name, $user_password);
 

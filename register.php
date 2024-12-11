@@ -78,24 +78,24 @@ if(isset($_POST['submit'])){
 <section class="form-container">
 
    <form class="register" action="" method="post" enctype="multipart/form-data">
-      <h3>create account</h3>
+      <h3>Buat Akun</h3>
       <div class="flex">
          <div class="col">
-            <p>your name <span>*</span></p>
-            <input type="text" name="name" placeholder="eneter your name" maxlength="50" required class="box">
-            <p>your email <span>*</span></p>
-            <input type="email" name="email" placeholder="enter your email" maxlength="20" required class="box">
+            <p>Nama <span>*</span></p>
+            <input type="text" name="name" placeholder="masukkan nama" maxlength="50" required class="box">
+            <p>Email <span>*</span></p>
+            <input type="email" name="email" placeholder="masukkan email" maxlength="20" required class="box">
          </div>
          <div class="col">
-            <p>your password <span>*</span></p>
-            <input type="password" name="pass" placeholder="enter your password" maxlength="20" required class="box">
-            <p>confirm password <span>*</span></p>
-            <input type="password" name="cpass" placeholder="confirm your password" maxlength="20" required class="box">
+            <p>Password <span>*</span></p>
+            <input type="password" name="pass" placeholder="masukkan password" maxlength="20" required class="box">
+            <p>Konfirmasi password <span>*</span></p>
+            <input type="password" name="cpass" placeholder="konfirmasi password" maxlength="20" required class="box">
          </div>
       </div>
-      <p>select pic <span>*</span></p>
+      <p>Piih gambar <span>*</span></p>
       <input type="file" name="image" accept="image/*" required class="box">
-      <p class="link">already have an account? <a href="login.php">login now</a></p>
+      <p class="link">sudah punya akun? <a href="login.php">login sekarang</a></p>
       <input type="submit" name="submit" value="register now" class="btn">
    </form>
 

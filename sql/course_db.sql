@@ -7,6 +7,7 @@
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
+-- create database
 CREATE DATABASE `course_db`;
 USE `course_db`;
 
