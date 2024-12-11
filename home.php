@@ -45,7 +45,7 @@ $total_bookmarked = $select_bookmark->rowCount();
 
 <section class="quick-select">
    <!-- quick option -->
-   <h1 class="heading">quick options</h1>
+   <h1 class="heading">Dashboard</h1>
 
    <div class="box-container">
 
@@ -64,14 +64,13 @@ $total_bookmarked = $select_bookmark->rowCount();
       <?php
          }else{ 
       ?>
-      <div class="box" style="text-align: center;">
+      <!-- <div class="box" style="text-align: center;">
          <h3 class="title">Mohon login atau register terlebih dahulu</h3>
-         <!-- login or register di quick option student -->
          <div class="flex-btn" style="padding-top: .5rem;">
             <a href="login.php" class="option-btn">login</a>
             <a href="register.php" class="option-btn">register</a>
          </div>
-      </div>
+      </div> -->
       <?php
       }
       ?>
@@ -124,11 +123,15 @@ $total_bookmarked = $select_bookmark->rowCount();
    <h1 class="heading">latest courses</h1>
 
    <div class="box-container">
-
+      <?php if(empty($user_id)) { 
+         echo '<p class="empty">Mohon Untuk Login Terlebih Dahulu</p>';
+       } 
+       ?>
+      
       <?php
          $select_courses = $conn->prepare("SELECT * FROM `playlist` WHERE status = ? ORDER BY date DESC LIMIT 6");
          $select_courses->execute(['active']);
-         if($select_courses->rowCount() > 0){
+         if(($select_courses->rowCount() > 0)&&(!empty($user_id))){
             while($fetch_course = $select_courses->fetch(PDO::FETCH_ASSOC)){
                $course_id = $fetch_course['id'];
 
@@ -148,18 +151,21 @@ $total_bookmarked = $select_bookmark->rowCount();
          <h3 class="title"><?= $fetch_course['title']; ?></h3>
          <a href="playlist.php?get_id=<?= $course_id; ?>" class="inline-btn">view playlist</a>
       </div>
+      <div class="more-btn">
+         <a href="courses.php" class="inline-option-btn">view more</a>
+      </div>
       <?php
          }
-      }else{
+      }elseif(($select_courses->rowCount() == 0)&&(!empty($user_id))){
          echo '<p class="empty">no courses added yet!</p>';
       }
       ?>
 
    </div>
 
-   <div class="more-btn">
+   <!-- <div class="more-btn">
       <a href="courses.php" class="inline-option-btn">view more</a>
-   </div>
+   </div> -->
 
 </section>
 

@@ -86,7 +86,7 @@ if(isset($_POST['tutor_fetch'])){
 
 <section class="courses">
 
-   <h1 class="heading">latest courese</h1>
+   <h1 class="heading">latest course</h1>
 
    <div class="box-container">
 

@@ -78,14 +78,14 @@ if(isset($_POST['submit'])){
 
       <div class="box">
          <i class="fas fa-phone"></i>
-         <h3>phone number</h3>
+         <h3>Phone Number</h3>
          <a href="http://wa.me/6285932842699" target="_blank">0859-3284-2699</a>
          <a href="http://wa.me/6281226927168" target="_blank">0812-2692-7168</a>
       </div>
 
       <div class="box">
          <i class="fas fa-envelope"></i>
-         <h3>email address</h3>
+         <h3>Email Address</h3>
          <a href="mailto:algofkz@gmail.com">algofkz@gmail.com</a>
          <a href="mailto:">arvin@gmail.com</a>
       </div>
