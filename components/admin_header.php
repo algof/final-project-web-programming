@@ -15,7 +15,9 @@ if(isset($message)){
 
    <section class="flex">
 
-      <a href="dashboard.php" class="logo">Tutor</a>
+      <a href="dashboard.php" class="logo">
+         <img src="../images/logo.png" alt="Logo Pelajar" width="75" height="75">
+      </a>
 
       <form action="search_page.php" method="post" class="search-form">
          <input type="text" name="search" placeholder="cari disini..." required maxlength="100">

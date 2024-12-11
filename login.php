@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
      setcookie('user_id', $row['id'], time() + 60*60*24*30, '/');
      header('location:home.php');
    }else{
-      $message[] = 'incorrect email or password!';
+      $message[] = 'email atau password salah!';
    }
 
 }

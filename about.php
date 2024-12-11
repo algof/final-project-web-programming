@@ -42,7 +42,7 @@ if(isset($_COOKIE['user_id'])){
       <div class="content">
          <h3>Kenapa memilih kami?</h3>
          <p>Kami menawarkan kursus online dengan materi berkualitas, terstruktur dengan baik, dan mudah dipahami. Instruktur kami berpengalaman dan mengutamakan pendekatan praktis agar Anda bisa belajar dengan fleksibel, sesuai waktu Anda. Dapatkan dukungan penuh dari komunitas belajar kami dan akses sertifikat resmi untuk memperkuat portofolio Anda. Semua ini tersedia dengan harga yang terjangkau, memberikan nilai luar biasa untuk pengembangan karier Anda.</p>
-         <a href="courses.php" class="inline-btn">kelas kami</a>
+         <!-- <a href="courses.php" class="inline-btn">kelas kami</a> -->
       </div>
 
    </div>
@@ -91,7 +91,7 @@ if(isset($_COOKIE['user_id'])){
 
 <section class="reviews">
 
-   <h1 class="heading">student's reviews</h1>
+   <h1 class="heading">ulasan pengguna</h1>
 
    <div class="box-container">
 
@@ -117,7 +117,7 @@ if(isset($_COOKIE['user_id'])){
          <div class="user">
             <img src="images/pic-3.jpg" alt="">
             <div>
-               <h3>Valensio Arvin Setiawan</h3>
+               <h3>Valensio Arvin Putra Setiawan</h3>
                <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>

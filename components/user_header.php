@@ -15,7 +15,10 @@ if(isset($message)){
 
    <section class="flex">
       <!-- disebelah kiri search bar -->
-      <a href="home.php" class="logo">Pelajar</a>
+      <!-- <a href="home.php" class="logo">Pelajar</a> -->
+      <a href="home.php" class="logo">
+         <img src="images/logo.png" alt="Logo Pelajar" width="75" height="75">
+      </a>
 
       <form action="search_course.php" method="post" class="search-form">
          <input type="text" name="search_course" placeholder="Cari kelas..." required maxlength="100">

@@ -89,18 +89,22 @@ if(isset($_POST['tutor_fetch'])){
    <h1 class="heading">Kelas</h1>
 
    <div class="box-container">
+      <?php if(empty($user_id)) { 
+            echo '<p class="empty">Mohon Untuk Login Terlebih Dahulu</p>';
+         } 
+      ?>
 
       <?php
          $select_courses = $conn->prepare("SELECT * FROM `playlist` WHERE tutor_id = ? AND status = ?");
          $select_courses->execute([$tutor_id, 'active']);
-         if($select_courses->rowCount() > 0){
+         if(($select_courses->rowCount() > 0)&&(!empty($user_id))){
             while($fetch_course = $select_courses->fetch(PDO::FETCH_ASSOC)){
                $course_id = $fetch_course['id'];
 
                $select_tutor = $conn->prepare("SELECT * FROM `tutors` WHERE id = ?");
                $select_tutor->execute([$fetch_course['tutor_id']]);
                $fetch_tutor = $select_tutor->fetch(PDO::FETCH_ASSOC);
-      ?>
+      ?> 
       <div class="box">
          <div class="tutor">
             <img src="uploaded_files/<?= $fetch_tutor['image']; ?>" alt="">
@@ -111,12 +115,12 @@ if(isset($_POST['tutor_fetch'])){
          </div>
          <img src="uploaded_files/<?= $fetch_course['thumb']; ?>" class="thumb" alt="">
          <h3 class="title"><?= $fetch_course['title']; ?></h3>
-         <a href="playlist.php?get_id=<?= $course_id; ?>" class="inline-btn">view playlist</a>
+         <a href="playlist.php?get_id=<?= $course_id; ?>" class="inline-btn">lihat playlist</a>
       </div>
       <?php
          }
-      }else{
-         echo '<p class="empty">no courses added yet!</p>';
+      }elseif(($select_courses->rowCount() == 0)&&(!empty($user_id))){
+         echo '<p class="empty">belum ada playlist yang ditambahkan!</p>';
       }
       ?>
 

@@ -125,8 +125,8 @@ $total_bookmarked = $select_bookmark->rowCount();
    <div class="box-container">
       <?php if(empty($user_id)) { 
          echo '<p class="empty">Mohon Untuk Login Terlebih Dahulu</p>';
-       } 
-       ?>
+      } 
+      ?>
       
       <?php
          $select_courses = $conn->prepare("SELECT * FROM `playlist` WHERE status = ? ORDER BY date DESC LIMIT 6");
@@ -157,7 +157,7 @@ $total_bookmarked = $select_bookmark->rowCount();
       <?php
          }
       }elseif(($select_courses->rowCount() == 0)&&(!empty($user_id))){
-         echo '<p class="empty">no courses added yet!</p>';
+         echo '<p class="empty">belum ada playlist yang ditambahkan!</p>';
       }
       ?>
 
